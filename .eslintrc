@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+       "browser": false,
+       "node": true,
+       "es6": true,
+       "jest": true
+    },
+    "rules": {
+        "comma-dangle": [2, {
+            "arrays": "ignore",
+            "objects": "always",
+            "imports": "always",
+            "exports": "always",
+            "functions": "ignore"
+        }],
+        "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+        "key-spacing": [0],
+        "max-len": [0],
+        "no-console": [1]
+    }
+}
