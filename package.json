@@ -10,8 +10,10 @@
     "node": ">=6.0.0",
     "npm": ">=3.9.0"
   },
+  "preferGlobal": true,
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

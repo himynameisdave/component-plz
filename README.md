@@ -30,9 +30,9 @@ component-plz --help
   -S, --stateless             Create a stateless function component
 ```
 
-You **must** specify a name for your component (using `-N`) or else you will get an error. Expects the camelCased name for your component (eg: `MyComponent`) and generates a file called `my-component.jsx`.
+You *should* specify a name for your component (using `-N`). Expects the camelCased name for your component (eg: `MyComponent`) and generates a file called `my-component.jsx`. Defaults to `MyComponent` if you don't provide a name.
 
-You **should** specify either `component` or `stateless` (with either`-C` or `-S`), the rest of the options are fairly optional.
+You *should* specify either `component` or `stateless` (with either`-C` or `-S`), the rest of the options are fairly optional.
 
 #### **`--component`**
 
