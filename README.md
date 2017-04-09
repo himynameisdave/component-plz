@@ -1,4 +1,5 @@
 ## component-plz
+> [![Build Status](https://travis-ci.org/himynameisdave/component-plz.svg?branch=master)](https://travis-ci.org/himynameisdave/component-plz) [![Coverage Status](https://coveralls.io/repos/github/himynameisdave/component-plz/badge.svg?branch=master)](https://coveralls.io/github/himynameisdave/component-plz?branch=master)
 
 A simple command-line tool to quickly generate a React component file.
 
