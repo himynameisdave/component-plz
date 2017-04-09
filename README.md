@@ -8,7 +8,7 @@ A simple command-line tool to quickly generate a React component file.
 Install it globally like this:
 
 ```
-yarn add global component-plz
+yarn global add component-plz
 
 OR
 
