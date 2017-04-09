@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Priority: Critical",
+    "color": "#e11d21"
+  },
+  {
+    "name": "Priority: High",
+    "color": "#eb6420"
+  },
+  {
+    "name": "Priority: Low",
+    "color": "#009800"
+  },
+  {
+    "name": "Priority: Medium",
+    "color": "#fbca04"
+  },
+  {
+    "name": "Status: Abandonded",
+    "color": "#333333"
+  },
+  {
+    "name": "Status: Accepted",
+    "color": "#2E0854"
+  },
+  {
+    "name": "Status: Available",
+    "color": "#FFEB3B"
+  },
+  {
+    "name": "Status: Blocked",
+    "color": "#d4c5f9"
+  },
+  {
+    "name": "Status: Complete",
+    "color": "#2196F3"
+  },
+  {
+    "name": "Status: In Progress",
+    "color": "#B2EBF2"
+  },
+  {
+    "name": "Status: In Review",
+    "color": "#ff6666"
+  },
+  {
+    "name": "Type: Bug",
+    "color": "#F44336"
+  },
+  {
+    "name": "Type: Enhancement",
+    "color": "#FF9800"
+  },
+  {
+    "name": "Type: Investigate",
+    "color": "#795548"
+  },
+  {
+    "name": "Type: Maintenance",
+    "color": "#3F51B5"
+  },
+  {
+    "name": "Type: Question",
+    "color": "#E91E63"
+  }
+]

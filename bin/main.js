@@ -22,10 +22,11 @@ const main = () => {
         // .option('--pre-15-5', 'For React < 15.5.x. Pulls PropTypes from React.PropTypes')
         .parse(process.argv);
 
-
-    banner();
     if (!APP.name || APP.name === constants.DEFAULTS.COMPONENT_NAME) {
+        banner('Creating component...');
         console.warn(`\nWarning: no --name arg supplied, using default: ${constants.DEFAULTS.COMPONENT_NAME}`); // eslint-disable-line no-console
+    } else {
+        banner(`Creating ${APP.name} Component...`);
     }
 
     if (APP.component) {
