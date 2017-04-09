@@ -7,6 +7,7 @@
        "jest": true
     },
     "rules": {
+        "arrow-parens": [0],
         "comma-dangle": [2, {
             "arrays": "ignore",
             "objects": "always",
@@ -17,6 +18,8 @@
         "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
         "key-spacing": [0],
         "max-len": [0],
-        "no-console": [1]
+        "no-console": [1],
+        "no-underscore-dangle": [0],
+        "import/newline-after-import": [0]
     }
 }

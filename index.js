@@ -3,12 +3,13 @@ const APP = require('commander');
 const version = require('./package.json').version;
 const banner = require('./bin/utils/banner.js');
 const constants = require('./bin/constants.js');
-// const component = require('./bin/modules/component.js');
-// const stateless = require('./bin/modules/stateless.js');
+const component = require('./bin/modules/component.js');
+const stateless = require('./bin/modules/stateless.js');
+
 
 const main = () => {
     APP.version(version)
-        .option('-N, --name [componentName]', 'Name for your component [MyComponent]', constants.DEFAULT_COMPONENT_NAME)
+        .option('-N, --name [componentName]', 'Name for your component [MyComponent]', constants.DEFAULTS.COMPONENT_NAME)
         .option('-C, --component', 'Create a class extends Component (default)')
         .option('-S, --stateless', 'Create a stateless function component')
         // .option('-c, --connected', 'Adds Redux connect, including mapStateToProps & mapDispatchToProps')
@@ -24,11 +25,16 @@ const main = () => {
 
 
     banner();
-    if (APP.name === constants.DEFAULT_COMPONENT_NAME) {
-        console.warn(`Warning: no --name arg supplied, using default: ${constants.DEFAULT_COMPONENT_NAME}`);
+    if (!APP.name || APP.name === constants.DEFAULTS.COMPONENT_NAME) {
+        console.warn(`\nWarning: no --name arg supplied, using default: ${constants.DEFAULTS.COMPONENT_NAME}`); // eslint-disable-line no-console
     }
 
+    if (APP.component) {
+        component(APP);
+    } else {
+        stateless(APP);
+    }
 };
 
-//  Run CLI program
+ // Run CLI program
 main();
