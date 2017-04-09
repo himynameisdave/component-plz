@@ -1,6 +1,7 @@
 import React from 'react';
 
-const <% componentName %> () => {
+
+const <% componentName %> = (props) => {
     return (
         <div>
             <% componentName %>
@@ -9,5 +10,5 @@ const <% componentName %> () => {
 };
 
 <% componentPropTypes %>
-<% defaultProps %>
+
 export default <% componentName %>;

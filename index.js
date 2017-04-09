@@ -17,6 +17,7 @@ const main = () => {
         // .option('-n, --no-prop-types', 'Doesn\'t include PropTypes')
         // .option('-l, --create-class', 'Uses createClass (or React.createClass when used with pre-15-5)')
         // .option('-p, --pure', 'Extends PureComponent instead of Component (if using -C)')
+        // .option('-o, --open', 'Open the generated .jsx file in the default app for that file')
         // .option('--constructor', 'Adds a constructor (if using -C)')
         // .option('--cwm', 'Adds componentWillMount (if using -C)')
         // .option('--cdm', 'Adds componentDidMount (if using -C)')

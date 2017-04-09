@@ -1,6 +1,31 @@
+// const constants = require('../constants.js');
+const commonTemplateVars = require('../common-template-vars.js');
+const getFileName = require('../utils/get-filename.js');
+const getTemplate = require('../utils/get-template.js');
+const setDoReplace = require('../utils/set-do-replace.js');
+const writeFile = require('../utils/write-file.js');
+
+
+const statelessTemplateVars = [];
 
 const stateless = (APP) => {
-    console.log(APP.name);
+    //  Read our template file, which we can use as a base
+    const template = getTemplate('stateless');
+    let _template = template;
+    commonTemplateVars(APP.name)
+        .concat(statelessTemplateVars)
+        .map(setDoReplace)
+        .map(_var => {
+            _template = _var.doReplace(_template, _var.replacement);
+            return _template;
+        });
+
+    const filename = getFileName(APP.name);
+    //  Start replacing stuff
+    writeFile(filename, _template);
+    //  Break this off
+    console.log(`\nSuccessfully created ${filename}`); // eslint-disable-line no-console
+    process.exit(0);
 };
 
 

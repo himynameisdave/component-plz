@@ -1,32 +1,31 @@
-const constants = require('../constants.js');
+// const constants = require('../constants.js');
+const commonTemplateVars = require('../common-template-vars.js');
+const getFileName = require('../utils/get-filename.js');
 const getTemplate = require('../utils/get-template.js');
-const templateReplace = require('../utils/template-replace.js');
+const setDoReplace = require('../utils/set-do-replace.js');
 const writeFile = require('../utils/write-file.js');
 
+
+const componentTemplateVars = [];
 
 const component = (APP) => {
     //  Read our template file, which we can use as a base
     const template = getTemplate('component');
     let _template = template;
-    [
-        {
-            name: 'componentName',
-            replacement: APP.name,
-        }, {
-            name: 'componentPropTypes',
-            replacement: constants.REPLACEMENT_TEXT.componentPropTypes(APP.name),
-        },
-    ].map(_var => Object.assign({}, _var, {
-        doReplace: templateReplace(constants.TEMPLATE_VARS[_var.name]),
-    }))
-    .map(_var => {
-        _template = _var.doReplace(_template, _var.replacement);
-        return _template;
-    });
+    commonTemplateVars(APP.name)
+        .concat(componentTemplateVars)
+        .map(setDoReplace)
+        .map(_var => {
+            _template = _var.doReplace(_template, _var.replacement);
+            return _template;
+        });
 
-
+    const filename = getFileName(APP.name);
     //  Start replacing stuff
-    writeFile(APP.name, _template);
+    writeFile(filename, _template);
+    //  Break this off
+    console.log(`\nSuccessfully created ${filename}`); // eslint-disable-line no-console
+    process.exit(0);
 };
 
 

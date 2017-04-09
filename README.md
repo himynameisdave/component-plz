@@ -36,7 +36,7 @@ You *should* specify either `component` or `stateless` (with either`-C` or `-S`)
 
 #### **`--component`**
 
-Running with `--component` generates something along the lines of this:
+Running with `--component` (or `-C`) generates something along the lines of this:
 
 ```js
 import React, { Component } from 'react';
@@ -63,7 +63,7 @@ export default MyComponent;
 
 #### **`--stateless`**
 
-Running with `--stateless` generates something along the lines of this:
+Running with `--stateless` (or `-S`) generates something along the lines of this:
 
 ```js
 import React from 'react';
