@@ -13,17 +13,19 @@ const banner = componentName => {
         'yellow',
         'cyan',
     ];
-    const str = '==';
+    const patternSize = 3;
+    const str = '=~=';
     const baseBar = colours.map(prop => chalk[prop])
                            .map(colourify => colourify(str))
                            .join('');
-    const bar = `${baseBar}${baseBar}${baseBar}${baseBar}`;
-    const padAmount = ((colours.length * str.length) * 4) - 4;
-    // console.log(S(componentName).pad(padAmount).s);
+    let bar = [];
+    while (bar.length < patternSize) { bar.push(baseBar); }
+    const padAmount = ((colours.length * str.length) * patternSize) - 4;
+    bar = bar.join('');
     console.log( // eslint-disable-line no-console
-      `${bar}\n` +
-      `${chalk.blue('||')}${S(componentName).pad(padAmount).s}${chalk.blue('||')}\n` +
-      `${bar}`
+      `    ${bar}\n` +
+      `    ${chalk.blue('||')}${S(componentName).pad(padAmount).s}${chalk.blue('||')}\n` +
+      `    ${bar}`
     );
 };
 
