@@ -1,6 +1,5 @@
 
 const CONSTANTS = {
-    BANNER_FONT: 'Slant',
     DEFAULTS: {
         COMPONENT_NAME: 'MyComponent',
     },
